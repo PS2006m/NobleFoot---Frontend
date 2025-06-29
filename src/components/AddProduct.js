@@ -31,7 +31,7 @@ const AddProduct = () => {
     data.append('image', image); // add image file
 
     try {
-      const res = await axios.post('http://localhost:5000/add', data, {
+      const res = await axios.post('https://noblefoot-backend.onrender.com/add', data, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
