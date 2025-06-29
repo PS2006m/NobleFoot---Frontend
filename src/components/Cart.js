@@ -7,12 +7,12 @@ const Cart = () => {
   const [msg, setMsg] = useState('');
 
   const handleIncrease = async (productId) => {
-  await axios.post('http://localhost:5000/cart/increase', { productId }, { withCredentials: true });
+  await axios.post('https://noblefoot-backend.onrender.com/cart/increase', { productId }, { withCredentials: true });
   fetchCart(); // refresh after change
 };
   const fetchCart = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/cart', { withCredentials: true });
+      const res = await axios.get('https://noblefoot-backend.onrender.com/cart', { withCredentials: true });
       setCartItems(res.data);
       const totalPrice = res.data.reduce((acc, item) => acc + item.price * item.quantity, 0);
       setTotal(totalPrice);
@@ -27,12 +27,12 @@ const Cart = () => {
   }, []);
 
   const handleReduce = async (productId) => {
-    await axios.post('http://localhost:5000/cart/reduce', { productId }, { withCredentials: true });
+    await axios.post('https://noblefoot-backend.onrender.com/cart/reduce', { productId }, { withCredentials: true });
     fetchCart(); // refresh cart
   };
 
   const handleDelete = async (productId) => {
-    await axios.post('http://localhost:5000/cart/delete', { productId }, { withCredentials: true });
+    await axios.post('https://noblefoot-backend.onrender.com/cart/delete', { productId }, { withCredentials: true });
     fetchCart();
   };
 
