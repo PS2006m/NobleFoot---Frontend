@@ -24,7 +24,7 @@ const Signup = () => {
     setError('');
     setSuccess('');
     try {
-      const res = await axios.post('http://localhost:5000/signup', formData);
+      const res = await axios.post('https://noblefoot-backend.onrender.com/signup', formData);
       if (res.data.success) {
         await refreshAuth(); 
         setSuccess(res.data.msg);
