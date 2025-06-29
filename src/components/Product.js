@@ -13,7 +13,7 @@ const Product = () => {
   const handleSubmit = async (e, productId) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/cart/add', { productId }, {
+      const res = await axios.post('https://noblefoot-backend.onrender.com/cart/add', { productId }, {
         withCredentials: true
       });
       console.log('Product added to cart:', res.data);
@@ -35,7 +35,7 @@ const Product = () => {
       // ✅ Fetch all products
       const fetchAllProducts = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/products');
+          const res = await axios.get('https://noblefoot-backend.onrender.com/products');
           setProducts(res.data);
           setMsg("Showing all products");
         } catch (err) {
