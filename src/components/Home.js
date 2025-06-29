@@ -23,7 +23,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/checkSession',{withCredentials:true});
+        const response = await axios.get('https://noblefoot-backend.onrender.com/checkSession',{withCredentials:true});
         setMsg(response.data.msg);
         console.log("Message:", response.data.msg);
       } catch (err) {
@@ -35,7 +35,7 @@ const HomePage = () => {
     fetchData();
     const fetchProducts = async () =>{
       try {
-        const response = await axios.get('http://localhost:5000/HP');
+        const response = await axios.get('https://noblefoot-backend.onrender.com/HP');
         setProducts(response.data)
       }catch(err){
         
@@ -47,7 +47,7 @@ const HomePage = () => {
 const handleSubmit = async (e, productId) => {
   e.preventDefault();
   try {
-    const res = await axios.post('http://localhost:5000/cart/add', { productId }, {
+    const res = await axios.post('https://noblefoot-backend.onrender.com/cart/add', { productId }, {
       withCredentials: true,
     });
 
@@ -68,7 +68,7 @@ const handleSubmit = async (e, productId) => {
 
   
    async function handleClickMen(category){
-      const response = await axios.get(`http://localhost:5000/products/${category.toLowerCase()}`,{withCredentials:true});
+      const response = await axios.get(`https://noblefoot-backend.onrender.com/products/${category.toLowerCase()}`,{withCredentials:true});
       navigate('/products', { state: response.data });
 
   }  
