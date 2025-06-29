@@ -13,7 +13,7 @@ const Navbar = () => {
     const checkSession = async () => {
       try {
         await refreshAuth(); // Recheck admin
-        const res = await axios.get('http://localhost:5000/checkSession', {
+        const res = await axios.get('https://noblefoot-backend.onrender.com/checkSession', {
           withCredentials: true,
         });
         setIsSession(res.data.success);
