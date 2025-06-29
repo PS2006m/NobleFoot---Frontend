@@ -9,9 +9,9 @@ export const AuthProvider = ({ children }) => {
 
   const checkAuth = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/checkSession', { withCredentials: true });
+      const res = await axios.get('https://noblefoot-backend.onrender.com/checkSession', { withCredentials: true });
       if (res.data.success) {
-        const response = await fetch('http://localhost:5000/checkAdmin', {
+        const response = await fetch('https://noblefoot-backend.onrender.com/checkAdmin', {
           credentials: 'include',
         });
         const data = await response.json();
