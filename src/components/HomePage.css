@@ -1,0 +1,13 @@
+.hero {
+  background: url('https://source.unsplash.com/1600x600/?shoes,store') no-repeat center center/cover;
+  height: 60vh;
+}
+
+.category-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cta-section {
+  background-color: #28a745;
+}
