@@ -10,7 +10,7 @@ function Logout() {
   useEffect(() => {
     const logoutAndRedirect = async () => {
       try {
-        await axios.get('http://localhost:5000/logout', {
+        await axios.get('https://noblefoot-backend.onrender.com/logout', {
           withCredentials: true // ✅ Required to send session cookie
         });
         await refreshAuth(); // ✅ Refresh auth context after logout
