@@ -35,7 +35,9 @@ const HomePage = () => {
     fetchData();
     const fetchProducts = async () =>{
       try {
-        const response = await axios.get('https://noblefoot-backend.onrender.com/HP');
+        const response = await axios.get('https://noblefoot-backend.onrender.com/HP',{
+  withCredentials: true
+});
         setProducts(response.data)
       }catch(err){
         

@@ -35,7 +35,9 @@ const Product = () => {
       // ✅ Fetch all products
       const fetchAllProducts = async () => {
         try {
-          const res = await axios.get('https://noblefoot-backend.onrender.com/products');
+          const res = await axios.get('https://noblefoot-backend.onrender.com/products',{
+  withCredentials: true
+});
           setProducts(res.data);
           setMsg("Showing all products");
         } catch (err) {
